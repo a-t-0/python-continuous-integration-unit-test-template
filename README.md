@@ -7,13 +7,7 @@
 2. To run python tests you should browse to the `/test/` folder in anaconda, or any parent folder. **Don't** and run `python -m test_algs.py`. Instead: type: `python -m pytest`. The pytest is a dedicated python function that scans for all files that contain `test_` and run them.
 3. You can set up automated travis test integration by going to https://travis-ci.org/ logging in with your github user account, and then under the tab repositories click plus and select your repository on which  you want to set up travis-ci automated testing. Next, you can go to: https://travis-ci.org/dashboard and click on "trigger build" for that repository to create the first build. I assume all following commits to master trigger new builds.
 
-4. You can "unwrap urls" in a readme so that you don't have very long urls in your text. An example is done here with the `README.md` variable `black_badge`:
-[black_badge]
 
-<!-- Un-wrapped URL's below (Mostly for Badges) -->
-[black_badge]: https://img.shields.io/badge/code%20style-black-000000.svg
-
-Note the stuff in `<!-- some text -->` is a markdown comment.
 
 4. You can include the fancy icons showing how solid your repository is with the following "badges".
 
@@ -24,7 +18,13 @@ Which can then be written as:
 Status](https://travis-ci.org/a-t-0/python-continuous-integration-unit-test-template.svg?branch=master)](https://travis-ci.org/ucsf-bmi-203-2017/example)
 Ps. The build is failing deliberatly because 2 unit tests are failing (to show they correctly detect faulty code).
 
-6. The black repository is a tool to help developers improve their python formatting. The new repository is located here: https://github.com/psf/black This is the badge: 
+6. You can "unwrap urls" in a readme so that you don't have very long urls in your text. An example is done here with the `README.md` variable `black_badge`:
+[black_badge]
+
+<!-- Un-wrapped URL's below (Mostly for Badges) -->
+[black_badge]: https://img.shields.io/badge/code%20style-black-000000.svg
+
+7. The black repository is a tool to help developers improve their python formatting. The new repository is located here: https://github.com/psf/black This is the badge: 
 [![Code Style: Black][black_badge]](https://github.com/ambv/black)  
 
 7. The python package can be included
@@ -66,3 +66,9 @@ python -m pytest
 ```
 
 from the root directory of this project.
+
+
+<!-- Un-wrapped URL's below (Mostly for Badges) -->
+[black_badge]: https://img.shields.io/badge/code%20style-black-000000.svg
+[python_badge]: https://img.shields.io/badge/python-3.8-blue.svg
+[apache_badge]: https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg
