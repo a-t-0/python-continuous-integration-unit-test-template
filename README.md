@@ -55,6 +55,41 @@ Furthermore, one can/should specify the test location for the continuous integra
 script:
     "python -m pytest -v parent_folder/sub_folder/*"
 ```
+11. **IF** you want to use an object oriented unit test you should modify the `__init__` of the testclass otherwise it thinks it gets two arguments even if you don't pass any. A solution can be:
+```
+import unittest
+from ..src.some_folder.some_other_folder.Python_filename import Pythonclass
+
+class Test_rman_parser(unittest.TestCase):
+    
+    def __init__(self, *args, **kwargs):
+        super(Test_rman_parser, self).__init__(*args, **kwargs)
+        self.test_set_0 = self.get_test_set_0()
+    
+    # Defines a testset object with filepath and level of file that is tested
+    def get_test_set_0(self):
+        level = 42
+        filename = f'../some_folder/somefile.txt'
+        test_set_0 = Testset(filename,level)
+        return test_set_0
+
+    # perform some test (with the object you imported)
+    def test_add_two(self):
+        python_class = self.create_pythonclass(self.test_set_0)
+        self.assertTrue(True)
+    
+    # Initialize object from class you imported
+    def create_pythonclass(self,test_set):
+        return Pythonclass(test_set.filepath,test_set.level)
+
+class Testset:
+    def __init__(self,filepath,level):
+        self.filepath = filepath
+        self.level = level
+                
+if __name__ == '__main__':
+    unittest.main()
+```
 
 
 ## Usage
