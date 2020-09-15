@@ -12,7 +12,6 @@
 4. You can include the fancy icons showing how solid your repository is with the following "badges".
 
 5. To get the Travis Build badge on your repository, you can copy the link towards the build from the repository folder in the travis-ci website. That website is: https://travis-ci.org/<your github username>/<your repository name>. On that website the travis build button is shown, you can click it to get the link for that button. For this repository it returned: https://travis-ci.org/a-t-0/python-continuous-integration-unit-test-template.svg?branch=master
-
 Which can then be written as:
 [![Build
 Status](https://travis-ci.org/a-t-0/python-continuous-integration-unit-test-template.svg?branch=master)](https://travis-ci.org/ucsf-bmi-203-2017/example)
