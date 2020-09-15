@@ -41,12 +41,21 @@ Then you can import the `alg.py` file from the `test_algs.py` with command:
 ```
 from ..src.some_folder/some_other_folder import algs
 ```
+To be able to run the tests, every folder that is used in the folder-chain from test file `test_algo.py` to `alg.py` (the file that is imported by the test), should contain a `__init__.py` file to let python know that it can look into that folder for test files and module importing. In the described folder structure, the folders that should include such a `__init__.py` file are:
+```
+sub_folder
+sub_folder/src
+sub_folder/src/some_folder
+sub_folder/src/some_folder/some_other_folder
+sub_folder/test
+```
 Furthermore, one can/should specify the test location for the continuous integration to: 
 ```
 # run tests
 script:
     "python -m pytest -v parent_folder/sub_folder/*"
 ```
+
 
 ## Usage
 
