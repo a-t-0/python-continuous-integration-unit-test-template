@@ -1,6 +1,7 @@
 # python unit test project template with continuous integration (ci).
 
 Things I learned:
+
 0. Including a `__init__.py` in an arbitrary folder lets python know it is a python folder. This (somehow) helps to import modules form parent/sibling directories (from unit test files in a different folder).
 1. One can make an entire python project executable with one or two commands. To do so, the developer write all the python packages (and required versions) in a `requirements.txt` like: `numpy>=1.11.2`. Next, the user can "install"/download all the required packages with command:`conda install --yes --file requirements.txt`, after which the user can directly run the `main.py` if the user wants (if no paths/extra manual steps are required by the code).
 2. To run python tests you can include the `-m` command like `python -m test_addTwo.py` to run a library module as a script (I think this helps by finding/importing relative parent/sibling python files/modules.)
