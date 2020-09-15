@@ -32,7 +32,21 @@ Ps. The build is failing deliberatly because 2 unit tests are failing (to show t
 8. The licence can be included:
 [![License: Apache 2.0][apache_badge]](https://www.apache.org/licenses/LICENSE-2.0)
 
-
+9. **IF** you have more nested folder directories, for example like:
+```
+|-parent_folder/sub_folder/src/some_folder/some_other_folder/alg.py
+|-parent_folder/sub_folder/test/test_algs.py
+```
+Then you can import the `alg.py` file from the `test_algs.py` with command: 
+```
+from ..src.some_folder/some_other_folder import algs
+```
+Furthermore, one can/should specify the test location for the continuous integration to: 
+```
+# run tests
+script:
+    "python -m pytest -v parent_folder/sub_folder/*"
+```
 
 ## Usage
 
